@@ -57,7 +57,7 @@ namespace SistemaALuguelCarros
             MostrarSejaBemVindo();
 
             Console.WriteLine("Menu - Inicial");
-            Console.WriteLine("O que você deseja realizar?");
+            Console.WriteLine("Selecione uma das opções abaixo:");
             Console.WriteLine("1 - Alocar um carro.");
             Console.WriteLine("2 - Devolver um carro.");
             Console.WriteLine("3 - Verificar Disponibilidade.");
