@@ -4,127 +4,190 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Alocar_Carro
+namespace SistemaALuguelCarros
 {
     class Program
     {
-        static string[,] baseDeVeiculos;
+        static string[,] baseDecarros;
         static void Main(string[] args)
         {
-            CarregaTipoVeiculo();
-            MostrarBemVindoAlocacao();
-            if (MenuVeiculo() == 1) ;
+            CarregaBaseDeDados();
 
+            var opcaoMenu = MenuPrincipal();
+
+            while (opcaoMenu != 4)
             {
-                MostrarMenuCarroAlocacao();
+                if (opcaoMenu == 1)
+                    AlocarUmcarro();
+
+                if (opcaoMenu == 2)
+                    DesalocarUmcarro();
+
+                if (opcaoMenu == 3)
+                {
+                    MostrarListaDecarros();
+                    Console.Read();
+                }
+
+                opcaoMenu = MenuPrincipal();
             }
 
             Console.ReadKey();
         }
+
         /// <summary>
-        /// Metodo que mostra a tela inicial de Alocação
+        /// Mostra as informações do inico do sistema.
         /// </summary>
-        public static void MostrarBemVindoAlocacao()
+        public static void MostrarSejaBemVindo()
         {
-            Console.WriteLine("___________________________");
-            Console.WriteLine("     Alocação de Carros");
-            Console.WriteLine("___________________________");
-            Console.WriteLine("     Sistema de Locação");
-            Console.WriteLine("___________________________");
+            Console.WriteLine("================================================");
+            Console.WriteLine("=        Sistema de alocação de carros.        =");
+            Console.WriteLine("================================================");
+            Console.WriteLine("=         Criado pelas fabricas  SHELL         =");
+            Console.WriteLine("================================================");
         }
         /// <summary>
-        /// Metodo que mostra as opções para Alocação do Veículo
+        /// Metodo que mostra o menu inicial com as opções para escolha do menu.
         /// </summary>
-        /// <returns>Retorna o resultado como tipo inteiro</returns>
-        public static int MenuVeiculo()
+        /// <returns>Retorna o número do menu escolhido no menu.</returns>
+        public static int MenuPrincipal()
         {
-            Console.WriteLine("\r\nMenu Inicial para Alocar Veículo");
-            Console.WriteLine("Digite uma das seguintes opções:");
-            Console.WriteLine("Digite (1) para Alocar um Veículo");
-            Console.WriteLine("Digite (2) para sair do sistema");
-            Console.WriteLine("\r\nDigite a opção desejada");
+            Console.Clear();
+
+            MostrarSejaBemVindo();
+
+            Console.WriteLine("Menu - Inicial");
+            Console.WriteLine("O que você deseja realizar?");
+            Console.WriteLine("1 - Alocar um carro.");
+            Console.WriteLine("2 - Devolver um carro.");
+            Console.WriteLine("3 - Verificar Disponibilidade.");
+            Console.WriteLine("4 - Sair do sistema.");
+            Console.WriteLine("Digite o número desejado:");
 
             int.TryParse(Console.ReadKey().KeyChar.ToString(), out int opcao);
 
             return opcao;
         }
         /// <summary>
-        /// Carrega os tipos de veiculos/ano disponiveis para locação
+        /// Metodo que carrega a base de carros dentro do sistema.
         /// </summary>
-        public static void CarregaTipoVeiculo()
+        public static void CarregaBaseDeDados()
         {
-            baseDeVeiculos = new string[2, 3]
+            baseDecarros = new string[2, 3]
             {
-                { "Corsa","2006","Não"},
-                { "Celta","2004","Sim"}
+                {"celta","2004","sim"},
+                {"palio","2008","não"}
             };
         }
         /// <summary>
-        /// Metodo de retorno que mostra se o carro pode ser alocado.
+        /// Metodo que retorna se um carro pode ser alocado.
         /// </summary>
-        /// <param name="nomeCarro">Nome do carro para verificar disponibilidade.</param>
-        /// <returns>Retorna Verdadeiro se o carro estiver dispivel.</returns>
-        public static bool PesquisaCarroParaAlocacao(string nomeCarro, int ano)
+        /// <param name="nomeCarro">Nome do carro a que será pesquisado</param>
+        /// <returns>Retorna true no caso do carro estar livre para alocação.</returns>
+        public static bool PesquisacarroParaAlocacao(string nomeCarro)
         {
-            for (int i = 0; i < baseDeVeiculos.GetLongLength(0); i++)
+            for (int i = 0; i < baseDecarros.GetLength(0); i++)
             {
-                if (nomeCarro == baseDeVeiculos[i, 0] && ano.ToString() == baseDeVeiculos[i, 1])
+                if (nomeCarro == baseDecarros[i, 0])
                 {
-                    Console.WriteLine($" Carro:{nomeCarro}" + $"{ano}" + $"pode ser alocado?:{baseDeVeiculos[i, 2]}");
+                    Console.WriteLine($"O carro:{nomeCarro}" +
+                          $" pode ser alocado?:{baseDecarros[i, 0]}");
 
-                    return baseDeVeiculos[i, 2] == "Sim";
+                    return baseDecarros[i, 2] == "sim";
                 }
             }
+
             return false;
         }
         /// <summary>
-        /// Metodo para alocação do veiculo.
+        /// Metodo para alterar a informação da alocação do carro.
         /// </summary>
-        /// <param name="nomeCarro">Nome do carro locado.</param>
-        public static void AlocarVeiculo(string nomeCarro)
+        /// <param name="nomeCarro">Nome do carro</param>
+        /// <param name="alocar">Valor bool que define se o carro esta ou não está disponivel.</param>
+        public static void AlocarCarro(string nomeCarro, bool alocar)
         {
-            for (int i = 0; i < baseDeVeiculos.GetLength(0); i++)
+            for (int i = 0; i < baseDecarros.GetLength(0); i++)
             {
-                if (nomeCarro == baseDeVeiculos[i, 0])
-                    baseDeVeiculos[i, 1] = "Não";
+                if (nomeCarro == baseDecarros[i, 0])
+                {
+                    baseDecarros[i, 2] = alocar ? "não" : "sim";
+                }
+            }
+
+            Console.Clear();
+            MostrarSejaBemVindo();
+            Console.WriteLine("carro atualizado com sucesso!");
+        }
+        /// <summary>
+        /// Metodo que carrega o conteudo da aplicação do menu 1
+        /// </summary>
+        public static void AlocarUmcarro()
+        {
+            MostrarMenuInicialcarros("Alocar um carro:");
+
+            var nomeDoCarro = Console.ReadLine();
+            if (PesquisacarroParaAlocacao(nomeDoCarro))
+            {
+                Console.Clear();
+                MostrarSejaBemVindo();
+                Console.WriteLine("Você deseja alocar o carro? para sim(1) para não(0)");
+
+                AlocarCarro(nomeDoCarro, Console.ReadKey().KeyChar.ToString() == "1");
+
+                MostrarListaDecarros();
+
+                Console.ReadKey();
             }
         }
-
         /// <summary>
-        /// Metodo que carrega o conteudo inicial da aplicação do menu 1.
+        /// Metodo que mostra a lista de carros atualizada
         /// </summary>
-        public static void MostrarMenuCarroAlocacao()
+        public static void MostrarListaDecarros()
+        {
+            Console.WriteLine("\r\nListagem de carros:");
+
+            for (int i = 0; i < baseDecarros.GetLength(0); i++)
+            {
+                Console.WriteLine($"Nome: {baseDecarros[i, 0]} Disponivel:{baseDecarros[i, 2]}");
+            }
+        }
+        /// <summary>
+        /// Metodo usado para desalocar um carro do sistema.
+        /// </summary>
+        public static void DesalocarUmcarro()
+        {
+            MostrarMenuInicialcarros("Desalocar um carro:");
+
+            MostrarListaDecarros();
+
+            var nomeDoCarro = Console.ReadLine();
+            if (!PesquisacarroParaAlocacao(nomeDoCarro))
+            {
+                Console.Clear();
+                MostrarSejaBemVindo();
+                Console.WriteLine("Você deseja desalocar o carro? para sim(1) para não(0)");
+
+                AlocarCarro(nomeDoCarro, Console.ReadKey().KeyChar.ToString() == "0");
+
+                MostrarListaDecarros();
+
+                Console.ReadKey();
+            }
+        }
+        /// <summary>
+        /// Metodo que mostra o Menu Inicial
+        /// </summary>
+        /// <param name="operacao"></param>
+        public static void MostrarMenuInicialcarros(string operacao)
         {
             Console.Clear();
 
-            MostrarBemVindoAlocacao();
+            MostrarSejaBemVindo();
 
-            Console.WriteLine("Menu - Alocação de Veiculos");
-            Console.WriteLine("Digite o nome do carro a ser alocado:");
-            var nomeCarro = Console.ReadLine();
-            Console.WriteLine("Digite o ano do carro a ser alocado:");
-            string ano = Console.ReadLine();
-            int.TryParse(ano, out int resultado);
-            if (PesquisaCarroParaAlocacao(nomeCarro, resultado))
-            {
-                Console.Clear();
-                Console.WriteLine("Você deseja alocar este carro? Para sim (1) para não (0)");
-                if (Console.ReadKey().KeyChar.ToString() == "1")
-                {
-                    AlocarVeiculo(nomeCarro);
-                    Console.Clear();
-                    Console.WriteLine("Carro Alocado com sucesso");
-                }
-                else
-                    Console.Clear();
-
-                Console.WriteLine("Listagem de Carros");
-
-                for (int i = 0; i < baseDeVeiculos.GetLength(0); i++)
-                {
-                    Console.WriteLine($"Nome: {baseDeVeiculos[i, 0]} Disponivel: {baseDeVeiculos[i, 2]}");
-                }
-            }
+            Console.WriteLine($"Menu - {operacao}");
+            Console.WriteLine("Digite o nome do carro para realizar a operação:");
         }
+
+
     }
 }
