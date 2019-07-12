@@ -210,6 +210,7 @@ namespace SistemaBibliotecaOnlineNasa3PONTOZERO
             if (primeiro.ToLower().Replace(" ", "")
                     == segundo.ToLower().Replace(" ", ""))
                 return true;
+
             return false;
         }
     }
