@@ -27,8 +27,11 @@ namespace Receita_de_Bolo
                     "Asse em forno médio preaquecido (180°C) por cerca de 20 minutos",
                     "Deixe amornar um pouco e desenformar"};
 
-            Console.WriteLine("== Receita de bolo de Cenoura ==");
+            Console.WriteLine("====================================");
+            Console.WriteLine("==== Receita de bolo de Cenoura ====");
             Console.WriteLine("== Ingredientes / Modo de Preparo ==");
+            Console.WriteLine("====================================");
+            Console.WriteLine("== Pressione Enter para continuar ==\r\n");
 
             for (int i = 0; i < IngredienteReceita.GetLength(0); i++)
             {
