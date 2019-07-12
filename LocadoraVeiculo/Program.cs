@@ -88,7 +88,7 @@ namespace SistemaALuguelCarros
         {
             for (int i = 0; i < baseDecarros.GetLength(0); i++)
             {
-                if (nomeCarro == baseDecarros[i, 0])
+                if (CompararNomes(nomeCarro, baseDecarros[i, 0]))
                 {
                     Console.WriteLine($"O carro:{nomeCarro}" +
                           $" pode ser alocado?:{baseDecarros[i, 0]}");
@@ -108,7 +108,7 @@ namespace SistemaALuguelCarros
         {
             for (int i = 0; i < baseDecarros.GetLength(0); i++)
             {
-                if (nomeCarro == baseDecarros[i, 0])
+                if (CompararNomes(nomeCarro, baseDecarros[i, 0]))
                 {
                     baseDecarros[i, 2] = alocar ? "não" : "sim";
                 }
@@ -187,7 +187,20 @@ namespace SistemaALuguelCarros
             Console.WriteLine($"Menu - {operacao}");
             Console.WriteLine("Digite o nome do carro para realizar a operação:");
         }
+        /// <summary>
+        /// Metodo que compara duas strings deixando em caixa baixa e removendo os espaços.
+        /// </summary>
+        /// <param name="primeiro"></param>
+        /// <param name="segundo"></param>
+        /// <returns></returns>
+        public static bool CompararNomes(string primeiro, string segundo)
+        {
+            if (primeiro.ToLower().Replace(" ", "")
+                    == segundo.ToLower().Replace(" ", ""))
+                return true;
 
+            return false;
+        }
 
     }
 }
