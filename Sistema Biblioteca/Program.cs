@@ -77,7 +77,7 @@ namespace SistemaBibliotecaOnlineNasa3PONTOZERO
         /// </summary>
         /// <param name="nomeLivro">Nome do livro a ser pesquisado</param>
         /// <returns>Retorna verdadeiro em caso o livro estiver livre para alocação.</returns>
-        public static bool? PesquisaLivroParaAlocacao(string nomeLivro)
+        public static bool? PesquisaLivroParaAlocacao(ref string nomeLivro)
         {
             for (int i = 0; i < baseDeLivros.GetLength(0); i++)
             {
@@ -92,14 +92,15 @@ namespace SistemaBibliotecaOnlineNasa3PONTOZERO
 
             Console.WriteLine("Nenhum livro encontrado. Deseja realizar a busca novamente?");
             Console.WriteLine("Digite o número da opcção desejada: sim (1) não (0)");
+
             int.TryParse(Console.ReadKey().KeyChar.ToString(), out int opcao);
 
             if (opcao == 1)
             {
-                Console.WriteLine("Digite o nome do licro a ser pesquisado:");
+                Console.WriteLine("Digite o nome do livro a ser pesquisado:");
                 nomeLivro = Console.ReadLine();
 
-                return PesquisaLivroParaAlocacao(nomeLivro);
+                return PesquisaLivroParaAlocacao(ref nomeLivro);
             }
 
             return null;
@@ -131,7 +132,7 @@ namespace SistemaBibliotecaOnlineNasa3PONTOZERO
             MostrarMenuInicialLivros("Alocar um livro:");
 
             var nomedolivro = Console.ReadLine();
-            var resultadoPesquisa = PesquisaLivroParaAlocacao(nomedolivro);
+            var resultadoPesquisa = PesquisaLivroParaAlocacao(ref nomedolivro);
 
             if (resultadoPesquisa != null && resultadoPesquisa == true)
             {
@@ -170,7 +171,7 @@ namespace SistemaBibliotecaOnlineNasa3PONTOZERO
             MostrarListaDeLivros();
 
             var nomedolivro = Console.ReadLine();
-            var resultadoPesquisa = PesquisaLivroParaAlocacao(nomedolivro);
+            var resultadoPesquisa = PesquisaLivroParaAlocacao(ref nomedolivro);
 
             if (resultadoPesquisa != null && resultadoPesquisa == true)
 
