@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29020.237
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login de Maior idade", "Login de Maior idade.csproj", "{A29B6C8D-1EE3-4773-B6BA-BC32E3AC321F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A29B6C8D-1EE3-4773-B6BA-BC32E3AC321F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A29B6C8D-1EE3-4773-B6BA-BC32E3AC321F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A29B6C8D-1EE3-4773-B6BA-BC32E3AC321F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A29B6C8D-1EE3-4773-B6BA-BC32E3AC321F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {361B5D57-133A-4DD6-AAA0-D9F16631A17E}
+	EndGlobalSection
+EndGlobal
