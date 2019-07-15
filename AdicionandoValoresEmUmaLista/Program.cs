@@ -30,7 +30,7 @@ namespace AdicionandoValoresEmUmaLista
         /// </summary>
         /// <param name="listaDeNome">Lista de Nomes vazia ou Não</param>
         /// <param name="IdParalista">Referencia Externa Id</param>
-        public static void InsereRegistro (ref string[,] listaDeNome, ref int IdParalista)
+        public static void InsereRegistro(ref string[,] listaDeNome, ref int IdParalista)
         {
             for (int i = 0; i < listaDeNome.GetLength(0); i++)
             {
@@ -101,4 +101,6 @@ namespace AdicionandoValoresEmUmaLista
             }
 
         }
+
+    }
 }
