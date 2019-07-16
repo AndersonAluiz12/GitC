@@ -145,7 +145,7 @@ namespace InserirRemoverLista
                 if (baseDeDados[i, 3] != "false")
                     Console.WriteLine($"- ID:{baseDeDados[i, 0]} " +
                                       $"- Nome:{baseDeDados[i, 1]} " +
-                                      $"- Idade:{baseDeDados[i, 2]}");
+                                      $"- Idade:{baseDeDados[i, 2]} ");
             }
             //Indicamos para usuario informar um id dentro do nosso sistema para remover
             Console.WriteLine("Informe o id do registro a ser removido:");
