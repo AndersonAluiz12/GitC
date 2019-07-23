@@ -235,7 +235,7 @@ select m.Nome as 'Marca'
       ,sum (v.Valor * v.quantidade ) as 'Val Total Marca Mais Vendida'
 from Vendas v 
 inner join Carros C on c.id = v.Carro
-inner join Marcas m on m.id = c.marca
+inner join Marcas m on c.marca = m.id  
 group by m.nome
 order by 2 desc;
 
@@ -243,6 +243,16 @@ order by 2 desc;
 Trazer a quantidade do carro mais vendido de todos os anos
 Trazer o valor do carro mais vendido de todos os anos
 */
+
+select top 2
+       c.Modelo as 'Quantidade Mais Vendido'
+      ,sum (v.quantidade) as 'Valor Obtido'
+from Vendas v 
+inner join Carros C on c.id = v.Carro
+inner join Marcas m on m.id = c.marca
+group by c.modelo
+order by 2 desc;
+
 select 
        c.Modelo  as 'Carro Mais vendido'
       ,sum (v.quantidade*Valor) as 'Valor Obtido'
