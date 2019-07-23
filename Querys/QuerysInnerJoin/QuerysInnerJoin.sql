@@ -249,16 +249,16 @@ select top 2
       ,sum (v.quantidade) as 'Valor Obtido'
 from Vendas v 
 inner join Carros C on c.id = v.Carro
-inner join Marcas m on m.id = c.marca
 group by c.modelo
 order by 2 desc;
 
-select 
+---------------------------------------------------------------------------------------
+
+select top 1
        c.Modelo  as 'Carro Mais vendido'
-      ,sum (v.quantidade*Valor) as 'Valor Obtido'
+      ,sum (v.quantidade* v.Valor) as 'Valor Obtido'
 from Vendas v 
 inner join Carros C on c.id = v.Carro
-inner join Marcas m on m.id = c.marca
 group by c.modelo
 order by 2 desc;
 
