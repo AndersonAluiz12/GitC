@@ -244,7 +244,7 @@ Trazer a quantidade do carro mais vendido de todos os anos
 Trazer o valor do carro mais vendido de todos os anos
 */
 
-select top 2
+select 
        c.Modelo as 'Quantidade Mais Vendido'
       ,sum (v.quantidade) as 'Valor Obtido'
 from Vendas v 
