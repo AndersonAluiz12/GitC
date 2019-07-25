@@ -1,21 +1,19 @@
-﻿using MeuCarro4x4.MyFirstClass;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Calculadora;
 
-namespace MeuCarro4x4
+namespace UsandoCalculadora
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var teste = new Carro();
+            var Calc = new CalculadoraOperadores();
 
-            teste++;
-
-            teste.MostrarCarro();
+            Console.WriteLine(Calc.CalculadoraDuvidir(10, 2));
 
             Console.ReadKey();
         }
