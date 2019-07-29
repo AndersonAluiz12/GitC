@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{216D8348-E385-48BB-BFA9-BF3C80BE6EFB}</ProjectGuid>
+    <ProjectGuid>{40BB8DD8-39FC-43E5-9B7E-23BEBBFF4853}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Calculadora</RootNamespace>
-    <AssemblyName>Calculadora</AssemblyName>
+    <RootNamespace>AcessoCalculadoraDLL06</RootNamespace>
+    <AssemblyName>AcessoCalculadoraDLL06</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BibliotecaCalculadora">
+      <HintPath>..\..\..\..\Users\HBSIS\Downloads\BibliotecaCalculadora.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,15 +51,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Operadores\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CalculadoraDoisPontoZero\CalculadoraDoisPontoZero.csproj">
-      <Project>{4bacf828-c829-4971-907b-093aa2fb67c8}</Project>
-      <Name>CalculadoraDoisPontoZero</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

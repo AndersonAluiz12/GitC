@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{216D8348-E385-48BB-BFA9-BF3C80BE6EFB}</ProjectGuid>
+    <ProjectGuid>{4F1DB593-7E5D-4881-976D-496DE23422A4}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Calculadora</RootNamespace>
-    <AssemblyName>Calculadora</AssemblyName>
+    <RootNamespace>UsandoBibliotecaJoinha</RootNamespace>
+    <AssemblyName>UsandoBibliotecaJoinha</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -50,12 +50,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Operadores\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CalculadoraDoisPontoZero\CalculadoraDoisPontoZero.csproj">
-      <Project>{4bacf828-c829-4971-907b-093aa2fb67c8}</Project>
-      <Name>CalculadoraDoisPontoZero</Name>
+    <ProjectReference Include="..\MostrarJoinhaClass\MostrarJoinhaClass.csproj">
+      <Project>{2eaa7ffd-0113-49f4-8dc6-a389ad8abdee}</Project>
+      <Name>MostrarJoinhaClass</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

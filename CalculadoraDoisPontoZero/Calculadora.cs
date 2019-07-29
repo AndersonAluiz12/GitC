@@ -4,18 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calculadora
+namespace CalculadoraDoisPontoZero
 {
-    class Program
+    public class Calculadora
     {
-        static void Main(string[] args)
-        {
-
-        }
-    }
-    public class CalculadoraOperadores
-    {
-        public int CalculadoraSomar (int valor1, int valor2)
+        public int CalculadoraSomar(int valor1, int valor2)
         {
             return valor1 + valor2;
         }
@@ -35,7 +28,7 @@ namespace Calculadora
             return valor1 / valor2;
         }
 
-        public int CalcularRetangulo (int Base1 , int Altura2)
+        public int CalcularRetangulo(int Base1, int Altura2)
         {
             return Base1 * Altura2;
         }
@@ -47,10 +40,9 @@ namespace Calculadora
 
         public double CalcularCirculo(int Area)
         {
-          
-           var raio = Math.Sqrt((Area / 3.14));
-            return raio;
 
+            var raio = Math.Sqrt((Area / 3.14));
+            return raio;
         }
     }
 }

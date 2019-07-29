@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{216D8348-E385-48BB-BFA9-BF3C80BE6EFB}</ProjectGuid>
+    <ProjectGuid>{2C96C4FE-8042-461F-9EA1-2BFF566FD6CC}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Calculadora</RootNamespace>
-    <AssemblyName>Calculadora</AssemblyName>
+    <RootNamespace>ListarCarros</RootNamespace>
+    <AssemblyName>ListarCarros</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,20 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Carros.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Operadores\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CalculadoraDoisPontoZero\CalculadoraDoisPontoZero.csproj">
-      <Project>{4bacf828-c829-4971-907b-093aa2fb67c8}</Project>
-      <Name>CalculadoraDoisPontoZero</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
