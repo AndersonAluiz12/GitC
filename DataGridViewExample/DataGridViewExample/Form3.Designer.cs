@@ -30,7 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.querysInnerJoinDataSet1 = new DataGridViewExample.QuerysInnerJoinDataSet1();
+            this.button1 = new System.Windows.Forms.Button();
+            this.usuariosTableAdapter = new DataGridViewExample.QuerysInnerJoinDataSet1TableAdapters.UsuariosTableAdapter();
             this.Delet = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ativoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -38,10 +43,6 @@
             this.usuAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.querysInnerJoinDataSet1 = new DataGridViewExample.QuerysInnerJoinDataSet1();
-            this.button1 = new System.Windows.Forms.Button();
-            this.usuariosTableAdapter = new DataGridViewExample.QuerysInnerJoinDataSet1TableAdapters.UsuariosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet1)).BeginInit();
@@ -55,6 +56,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Delet,
+            this.Edit,
             this.idDataGridViewTextBoxColumn,
             this.usuarioDataGridViewTextBoxColumn,
             this.ativoDataGridViewCheckBoxColumn,
@@ -72,6 +74,29 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataMember = "Usuarios";
+            this.usuariosBindingSource.DataSource = this.querysInnerJoinDataSet1;
+            // 
+            // querysInnerJoinDataSet1
+            // 
+            this.querysInnerJoinDataSet1.DataSetName = "QuerysInnerJoinDataSet1";
+            this.querysInnerJoinDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(0, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(798, 62);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Adicionar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // usuariosTableAdapter
+            // 
+            this.usuariosTableAdapter.ClearBeforeFill = true;
+            // 
             // Delet
             // 
             this.Delet.DataPropertyName = "DeletCommand";
@@ -80,6 +105,17 @@
             this.Delet.Name = "Delet";
             this.Delet.ReadOnly = true;
             this.Delet.Width = 125;
+            // 
+            // Edit
+            // 
+            this.Edit.DataPropertyName = "Id";
+            this.Edit.HeaderText = "Editar";
+            this.Edit.MinimumWidth = 6;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "Editar";
+            this.Edit.UseColumnTextForButtonValue = true;
+            this.Edit.Width = 125;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -144,29 +180,6 @@
             this.datAltDataGridViewTextBoxColumn.ReadOnly = true;
             this.datAltDataGridViewTextBoxColumn.Width = 125;
             // 
-            // usuariosBindingSource
-            // 
-            this.usuariosBindingSource.DataMember = "Usuarios";
-            this.usuariosBindingSource.DataSource = this.querysInnerJoinDataSet1;
-            // 
-            // querysInnerJoinDataSet1
-            // 
-            this.querysInnerJoinDataSet1.DataSetName = "QuerysInnerJoinDataSet1";
-            this.querysInnerJoinDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(0, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(798, 62);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Adicionar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // usuariosTableAdapter
-            // 
-            this.usuariosTableAdapter.ClearBeforeFill = true;
-            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -192,6 +205,7 @@
         private System.Windows.Forms.BindingSource usuariosBindingSource;
         private QuerysInnerJoinDataSet1TableAdapters.UsuariosTableAdapter usuariosTableAdapter;
         private System.Windows.Forms.DataGridViewButtonColumn Delet;
+        private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ativoDataGridViewCheckBoxColumn;

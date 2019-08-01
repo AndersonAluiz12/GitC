@@ -30,7 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.marcasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.querysInnerJoinDataSet1 = new DataGridViewExample.QuerysInnerJoinDataSet1();
+            this.button1 = new System.Windows.Forms.Button();
+            this.querysInnerJoinDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.marcasTableAdapter = new DataGridViewExample.QuerysInnerJoinDataSet1TableAdapters.MarcasTableAdapter();
             this.Delet = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ativoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -38,11 +44,6 @@
             this.usuAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marcasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.querysInnerJoinDataSet1 = new DataGridViewExample.QuerysInnerJoinDataSet1();
-            this.button1 = new System.Windows.Forms.Button();
-            this.querysInnerJoinDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.marcasTableAdapter = new DataGridViewExample.QuerysInnerJoinDataSet1TableAdapters.MarcasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet1)).BeginInit();
@@ -57,6 +58,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Delet,
+            this.Edit,
             this.idDataGridViewTextBoxColumn,
             this.nomeDataGridViewTextBoxColumn,
             this.ativoDataGridViewCheckBoxColumn,
@@ -74,6 +76,34 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
+            // marcasBindingSource
+            // 
+            this.marcasBindingSource.DataMember = "Marcas";
+            this.marcasBindingSource.DataSource = this.querysInnerJoinDataSet1;
+            // 
+            // querysInnerJoinDataSet1
+            // 
+            this.querysInnerJoinDataSet1.DataSetName = "QuerysInnerJoinDataSet1";
+            this.querysInnerJoinDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(13, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(775, 55);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Adicionar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // querysInnerJoinDataSet1BindingSource
+            // 
+            this.querysInnerJoinDataSet1BindingSource.DataSource = this.querysInnerJoinDataSet1;
+            this.querysInnerJoinDataSet1BindingSource.Position = 0;
+            // 
+            // marcasTableAdapter
+            // 
+            this.marcasTableAdapter.ClearBeforeFill = true;
+            // 
             // Delet
             // 
             this.Delet.DataPropertyName = "DeletCommand";
@@ -82,6 +112,17 @@
             this.Delet.Name = "Delet";
             this.Delet.ReadOnly = true;
             this.Delet.Width = 125;
+            // 
+            // Edit
+            // 
+            this.Edit.DataPropertyName = "Id";
+            this.Edit.HeaderText = "Editar";
+            this.Edit.MinimumWidth = 6;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "Editar";
+            this.Edit.UseColumnTextForButtonValue = true;
+            this.Edit.Width = 125;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -146,34 +187,6 @@
             this.datAltDataGridViewTextBoxColumn.ReadOnly = true;
             this.datAltDataGridViewTextBoxColumn.Width = 125;
             // 
-            // marcasBindingSource
-            // 
-            this.marcasBindingSource.DataMember = "Marcas";
-            this.marcasBindingSource.DataSource = this.querysInnerJoinDataSet1;
-            // 
-            // querysInnerJoinDataSet1
-            // 
-            this.querysInnerJoinDataSet1.DataSetName = "QuerysInnerJoinDataSet1";
-            this.querysInnerJoinDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(13, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(775, 55);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Adicionar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // querysInnerJoinDataSet1BindingSource
-            // 
-            this.querysInnerJoinDataSet1BindingSource.DataSource = this.querysInnerJoinDataSet1;
-            this.querysInnerJoinDataSet1BindingSource.Position = 0;
-            // 
-            // marcasTableAdapter
-            // 
-            this.marcasTableAdapter.ClearBeforeFill = true;
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -201,6 +214,7 @@
         private System.Windows.Forms.BindingSource marcasBindingSource;
         private QuerysInnerJoinDataSet1TableAdapters.MarcasTableAdapter marcasTableAdapter;
         private System.Windows.Forms.DataGridViewButtonColumn Delet;
+        private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ativoDataGridViewCheckBoxColumn;
