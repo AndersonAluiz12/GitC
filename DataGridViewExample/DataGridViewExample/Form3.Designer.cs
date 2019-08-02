@@ -30,10 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.querysInnerJoinDataSet1 = new DataGridViewExample.QuerysInnerJoinDataSet1();
-            this.button1 = new System.Windows.Forms.Button();
-            this.usuariosTableAdapter = new DataGridViewExample.QuerysInnerJoinDataSet1TableAdapters.UsuariosTableAdapter();
             this.Delet = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +39,10 @@
             this.usuAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.querysInnerJoinDataSet1 = new DataGridViewExample.QuerysInnerJoinDataSet1();
+            this.btAdicionar = new System.Windows.Forms.Button();
+            this.usuariosTableAdapter = new DataGridViewExample.QuerysInnerJoinDataSet1TableAdapters.UsuariosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet1)).BeginInit();
@@ -73,29 +73,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(797, 367);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
-            // 
-            // usuariosBindingSource
-            // 
-            this.usuariosBindingSource.DataMember = "Usuarios";
-            this.usuariosBindingSource.DataSource = this.querysInnerJoinDataSet1;
-            // 
-            // querysInnerJoinDataSet1
-            // 
-            this.querysInnerJoinDataSet1.DataSetName = "QuerysInnerJoinDataSet1";
-            this.querysInnerJoinDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(0, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(798, 62);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Adicionar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // usuariosTableAdapter
-            // 
-            this.usuariosTableAdapter.ClearBeforeFill = true;
             // 
             // Delet
             // 
@@ -180,12 +157,36 @@
             this.datAltDataGridViewTextBoxColumn.ReadOnly = true;
             this.datAltDataGridViewTextBoxColumn.Width = 125;
             // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataMember = "Usuarios";
+            this.usuariosBindingSource.DataSource = this.querysInnerJoinDataSet1;
+            // 
+            // querysInnerJoinDataSet1
+            // 
+            this.querysInnerJoinDataSet1.DataSetName = "QuerysInnerJoinDataSet1";
+            this.querysInnerJoinDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btAdicionar
+            // 
+            this.btAdicionar.Location = new System.Drawing.Point(0, 3);
+            this.btAdicionar.Name = "btAdicionar";
+            this.btAdicionar.Size = new System.Drawing.Size(798, 62);
+            this.btAdicionar.TabIndex = 1;
+            this.btAdicionar.Text = "Adicionar";
+            this.btAdicionar.UseVisualStyleBackColor = true;
+            this.btAdicionar.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // usuariosTableAdapter
+            // 
+            this.usuariosTableAdapter.ClearBeforeFill = true;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btAdicionar);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form3";
             this.Text = "Form3";
@@ -200,7 +201,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btAdicionar;
         private QuerysInnerJoinDataSet1 querysInnerJoinDataSet1;
         private System.Windows.Forms.BindingSource usuariosBindingSource;
         private QuerysInnerJoinDataSet1TableAdapters.UsuariosTableAdapter usuariosTableAdapter;

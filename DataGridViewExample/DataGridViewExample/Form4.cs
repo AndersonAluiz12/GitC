@@ -1,4 +1,5 @@
-﻿using DataGridViewExample.Edicao;
+﻿using DataGridViewExample.Adicao;
+using DataGridViewExample.Edicao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,6 +50,26 @@ namespace DataGridViewExample
                     break;
             }
             this.vendasTableAdapter.CustomQuery(querysInnerJoinDataSet1.Vendas);
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            frmAddVendas frmVendas = new frmAddVendas();
+            frmVendas.ShowDialog();
+            
+            if(frmVendas.VendasRow?.Carros > 0 && frmVendas.VendasRow?.Valor > 0)
+
+            this.vendasTableAdapter.Insert
+                (
+                frmVendas.VendasRow.Carros,
+                frmVendas.VendasRow.Quantidade,
+                frmVendas.VendasRow.Valor,
+                frmVendas.VendasRow.Ativo,
+                1,
+                1,
+                frmVendas.VendasRow.DatInc,
+                frmVendas.VendasRow.DatAlt
+                );
         }
     }
 }

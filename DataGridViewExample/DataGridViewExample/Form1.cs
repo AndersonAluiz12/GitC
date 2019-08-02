@@ -81,7 +81,8 @@ namespace DataGridViewExample
         {
             frmAdicionar formAdd = new frmAdicionar();
             formAdd.ShowDialog();
-
+            //Insert na tabela de banco de dados de carros o novo registro
+            if(!string.IsNullOrEmpty(formAdd.CarrosRow?.Modelo))
             this.carrosTableAdapter.Insert(
                 formAdd.CarrosRow.Modelo,
                 formAdd.CarrosRow.Ano,
@@ -92,6 +93,8 @@ namespace DataGridViewExample
                 DateTime.Now,
                 DateTime.Now
                 );
+
+            this.carrosTableAdapter.Fill(this.querysInnerJoinDataSet1.Carros);
         }
     }
 }
