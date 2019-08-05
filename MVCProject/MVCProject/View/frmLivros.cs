@@ -23,5 +23,19 @@ namespace MVCProject.View
             this.livrosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Livros);
 
         }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var LivrosSelect = ((System.Data.DataRowView)
+                 this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
+                 as MVCProject.SistemaBibliotecaDBDataSet.AutoresRow;
+
+            switch (e.ColumnIndex)
+            {
+                case 0:
+                    { this.livrosTableAdapter.DeleteQuery(LivrosSelect.Id); }
+                    break;
+            }
+        }
     }
 }

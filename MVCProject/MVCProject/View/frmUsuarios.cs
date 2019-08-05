@@ -23,5 +23,19 @@ namespace MVCProject.View
             this.usuariosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Usuarios);
 
         }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var UsuariosSelect = ((System.Data.DataRowView)
+                 this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
+                 as MVCProject.SistemaBibliotecaDBDataSet.AutoresRow;
+
+            switch (e.ColumnIndex)
+            {
+                case 0:
+                    { this.usuariosTableAdapter.DeleteQuery(UsuariosSelect.Id); }
+                    break;
+            }
+        }
     }
 }

@@ -30,16 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btAdicionar = new System.Windows.Forms.Button();
-            this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBDataSet();
             this.autoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBDataSet();
+            this.btAdicionar = new System.Windows.Forms.Button();
             this.autoresTableAdapter = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.AutoresTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delet = new System.Windows.Forms.DataGridViewButtonColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -50,6 +52,8 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
+            this.Edit,
+            this.Delet,
             this.nomeDataGridViewTextBoxColumn,
             this.descricaoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.autoresBindingSource;
@@ -60,25 +64,26 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(796, 382);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
-            // btAdicionar
+            // autoresBindingSource
             // 
-            this.btAdicionar.Location = new System.Drawing.Point(5, 4);
-            this.btAdicionar.Name = "btAdicionar";
-            this.btAdicionar.Size = new System.Drawing.Size(792, 62);
-            this.btAdicionar.TabIndex = 1;
-            this.btAdicionar.Text = "Adicionar";
-            this.btAdicionar.UseVisualStyleBackColor = true;
+            this.autoresBindingSource.DataMember = "Autores";
+            this.autoresBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
             // 
             // sistemaBibliotecaDBDataSet
             // 
             this.sistemaBibliotecaDBDataSet.DataSetName = "SistemaBibliotecaDBDataSet";
             this.sistemaBibliotecaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // autoresBindingSource
+            // btAdicionar
             // 
-            this.autoresBindingSource.DataMember = "Autores";
-            this.autoresBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
+            this.btAdicionar.Location = new System.Drawing.Point(2, 4);
+            this.btAdicionar.Name = "btAdicionar";
+            this.btAdicionar.Size = new System.Drawing.Size(795, 62);
+            this.btAdicionar.TabIndex = 1;
+            this.btAdicionar.Text = "Adicionar";
+            this.btAdicionar.UseVisualStyleBackColor = true;
             // 
             // autoresTableAdapter
             // 
@@ -92,6 +97,28 @@
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // Edit
+            // 
+            this.Edit.DataPropertyName = "Id";
+            this.Edit.HeaderText = "Editar";
+            this.Edit.MinimumWidth = 6;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "Editar";
+            this.Edit.UseColumnTextForButtonValue = true;
+            this.Edit.Width = 125;
+            // 
+            // Delet
+            // 
+            this.Delet.DataPropertyName = "Id";
+            this.Delet.HeaderText = "Deletar";
+            this.Delet.MinimumWidth = 6;
+            this.Delet.Name = "Delet";
+            this.Delet.ReadOnly = true;
+            this.Delet.Text = "Deletar";
+            this.Delet.UseColumnTextForButtonValue = true;
+            this.Delet.Width = 125;
             // 
             // nomeDataGridViewTextBoxColumn
             // 
@@ -122,8 +149,8 @@
             this.Text = "Autores";
             this.Load += new System.EventHandler(this.FrmAutores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -136,6 +163,8 @@
         private System.Windows.Forms.BindingSource autoresBindingSource;
         private SistemaBibliotecaDBDataSetTableAdapters.AutoresTableAdapter autoresTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn Edit;
+        private System.Windows.Forms.DataGridViewButtonColumn Delet;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
     }

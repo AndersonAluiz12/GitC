@@ -23,5 +23,19 @@ namespace MVCProject.View
             this.generosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Generos);
 
         }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var GenerosSelect = ((System.Data.DataRowView)
+                 this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
+                 as MVCProject.SistemaBibliotecaDBDataSet.AutoresRow;
+
+            switch (e.ColumnIndex)
+            {
+                case 0:
+                    { this.generosTableAdapter.DeleteQuery(GenerosSelect.Id); }
+                    break;
+            }
+        }
     }
 }
