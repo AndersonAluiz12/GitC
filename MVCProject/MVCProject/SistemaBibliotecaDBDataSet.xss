@@ -51,62 +51,62 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_Livro_To_Genero" ZOrder="7" LineWidth="11">
+    <Connector ID="DesignRelation:FK_Livro_To_Genero" ZOrder="1" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>348</X>
           <Y>589</Y>
         </Point>
         <Point>
-          <X>261</X>
+          <X>231</X>
           <Y>589</Y>
         </Point>
         <Point>
-          <X>261</X>
+          <X>231</X>
           <Y>481</Y>
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_Livro_To_UsuariosAlt" ZOrder="6" LineWidth="11">
+    <Connector ID="DesignRelation:FK_Livro_To_UsuariosAlt" ZOrder="2" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>348</X>
           <Y>840</Y>
         </Point>
         <Point>
-          <X>253</X>
+          <X>208</X>
           <Y>840</Y>
         </Point>
         <Point>
-          <X>253</X>
+          <X>208</X>
           <Y>481</Y>
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_Livro_To_UsuariosInc" ZOrder="5" LineWidth="11">
+    <Connector ID="DesignRelation:FK_Livro_To_UsuariosInc" ZOrder="3" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>348</X>
           <Y>848</Y>
         </Point>
         <Point>
-          <X>245</X>
+          <X>176</X>
           <Y>848</Y>
         </Point>
         <Point>
-          <X>245</X>
+          <X>176</X>
           <Y>481</Y>
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_Locacao_Livros" ZOrder="4" LineWidth="11">
+    <Connector ID="DesignRelation:FK_Locacao_Livros" ZOrder="7" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>237</X>
+          <X>134</X>
           <Y>481</Y>
         </Point>
         <Point>
-          <X>237</X>
+          <X>134</X>
           <Y>1252</Y>
         </Point>
         <Point>
@@ -115,7 +115,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_Locacao_UsuAlt" ZOrder="3" LineWidth="11">
+    <Connector ID="DesignRelation:FK_Locacao_UsuAlt" ZOrder="6" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>443</X>
@@ -127,7 +127,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_Locacao_UsuarioAloc" ZOrder="2" LineWidth="11">
+    <Connector ID="DesignRelation:FK_Locacao_UsuarioAloc" ZOrder="5" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>451</X>
@@ -139,7 +139,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_Locacao_UsuInc" ZOrder="1" LineWidth="11">
+    <Connector ID="DesignRelation:FK_Locacao_UsuInc" ZOrder="4" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>459</X>
