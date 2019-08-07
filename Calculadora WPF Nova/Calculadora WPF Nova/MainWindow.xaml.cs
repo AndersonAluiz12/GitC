@@ -31,7 +31,7 @@ namespace Calculadora_WPF_Nova
             InitializeComponent();
         }
 
-        private void Botao1_Click_1(object sender, RoutedEventArgs e)
+        private void Botao1_Click(object sender, RoutedEventArgs e)
         {
             if (Operacao == "")
             {
@@ -45,7 +45,7 @@ namespace Calculadora_WPF_Nova
             }
         }
 
-        private void Botao2_Click_1(object sender, RoutedEventArgs e)
+        private void Botao2_Click(object sender, RoutedEventArgs e)
         {
             if (Operacao == "")
             {
@@ -59,7 +59,7 @@ namespace Calculadora_WPF_Nova
             }
         }
 
-        private void Botao3_Click_1(object sender, RoutedEventArgs e)
+        private void Botao3_Click(object sender, RoutedEventArgs e)
         {
             if (Operacao == "")
             {

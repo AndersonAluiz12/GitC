@@ -25,9 +25,9 @@
         </Grid.RowDefinitions>
 
             <!--Números-->
-        <Button x:Name="Botao1" Grid.Row="2" Grid.Column="0" Click="Botao1_Click_1">1</Button>
-        <Button x:Name="Botao2" Grid.Row="2" Grid.Column="1" Click="Botao2_Click_1" HorizontalAlignment="Right" Width="68">2</Button>
-        <Button x:Name="Botao3" Grid.Row="2" Grid.Column="2" Click="Botao3_Click_1">3</Button>
+        <Button x:Name="Botao1" Grid.Row="2" Grid.Column="0" Click="Botao1_Click">1</Button>
+        <Button x:Name="Botao2" Grid.Row="2" Grid.Column="1" Click="Botao2_Click" HorizontalAlignment="Right" Width="68">2</Button>
+        <Button x:Name="Botao3" Grid.Row="2" Grid.Column="2" Click="Botao3_Click">3</Button>
         <Button x:Name="Botao4" Grid.Row="3" Grid.Column="0" Click="Botao4_Click">4</Button>
         <Button x:Name="Botao5" Grid.Row="3" Grid.Column="1" Click="Botao5_Click">5</Button>
         <Button x:Name="Botao6" Grid.Row="3" Grid.Column="2" Click="Botao6_Click">6</Button>

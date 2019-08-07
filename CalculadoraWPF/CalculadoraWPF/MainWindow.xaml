@@ -5,8 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CalculadoraWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Calculadora WPF
+        " Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="314*"/>
+            <ColumnDefinition Width="178*"/>
+            <ColumnDefinition Width="301*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="1" HorizontalAlignment="Left" Height="60" Margin="40,35,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Content="2" HorizontalAlignment="Left" Height="60" Margin="134,35,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Content="3" HorizontalAlignment="Left" Height="60" Margin="234,35,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Content="4" HorizontalAlignment="Left" Height="60" Margin="40,124,0,0" VerticalAlignment="Top" Width="60" RenderTransformOrigin="0.571,2.222"/>
+        <Button Content="5" HorizontalAlignment="Left" Height="60" Margin="134,125,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Content="6" HorizontalAlignment="Left" Height="60" Margin="234,125,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Content="7" HorizontalAlignment="Left" Height="60" Margin="40,210,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Content="8" HorizontalAlignment="Left" Height="60" Margin="134,210,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Content="9" HorizontalAlignment="Left" Height="60" Margin="234,210,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Content="0" HorizontalAlignment="Left" Height="60" Margin="134,296,0,0" VerticalAlignment="Top" Width="60"/>
+        <Button Content="/" HorizontalAlignment="Left" Height="60" Margin="30.6,35,0,0" VerticalAlignment="Top" Width="60" Grid.Column="1"/>
+        <Button Content="*" HorizontalAlignment="Left" Height="60" Margin="96.6,124,0,0" VerticalAlignment="Top" Width="60" Grid.Column="1"/>
+        <Button Content="+" HorizontalAlignment="Left" Height="60" Margin="30.6,210,0,0" VerticalAlignment="Top" Width="60" Grid.Column="1"/>
+        <Button Content="-" HorizontalAlignment="Left" Height="60" Margin="96.6,296,0,0" VerticalAlignment="Top" Width="60" Grid.Column="1"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Height="57" Margin="25.2,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="252"/>
+        <Button Content="=" Grid.Column="2" HorizontalAlignment="Left" Margin="25.2,195,0,0" VerticalAlignment="Top" Width="252" Height="149"/>
+
     </Grid>
 </Window>
