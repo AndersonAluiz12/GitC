@@ -243,5 +243,13 @@ namespace LoginCalc.Views
             Window1 tela = new Window1();
             tela.Show();
         }
+
+        private void BotaoSair_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+         
+        
+        
     }
 }

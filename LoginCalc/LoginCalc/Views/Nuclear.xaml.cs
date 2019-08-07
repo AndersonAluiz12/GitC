@@ -20,7 +20,7 @@ namespace LoginCalc.Views
     /// </summary>
     public partial class Nuclear : UserControl
     {
-        public event EventHandler BOOM;
+        //public event EventHandler BOOM;
         public Nuclear()
         {
             MessageBox.Show("Click em 'OK' Para ativação dos Mísseis");
