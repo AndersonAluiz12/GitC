@@ -1,0 +1,14 @@
+﻿<Window x:Class="LoginCalc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoginCalc"     
+        mc:Ignorable="d"
+        xmlns:y="clr-namespace:LoginCalc.Views"
+        Title="MainWindow" Height="350" Width="300">
+        <Grid>
+           <y:Login loginCorrect="Login_loginCorrect"></y:Login>
+           <y:Calcular x:Name="ucCalcular" Visibility="Hidden"></y:Calcular>
+        </Grid>    
+    </Window>
