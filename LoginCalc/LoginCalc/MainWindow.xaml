@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:LoginCalc"     
         mc:Ignorable="d"
         xmlns:y="clr-namespace:LoginCalc.Views"
-        Title="MainWindow" Height="350" Width="300">
+        Title="MainWindow" Height="350" Width="300" ResizeMode="NoResize">
         <Grid>
            <y:Login loginCorrect="Login_loginCorrect"></y:Login>
            <y:Calcular x:Name="ucCalcular" Visibility="Hidden"></y:Calcular>

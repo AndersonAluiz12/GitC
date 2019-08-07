@@ -248,8 +248,19 @@ namespace LoginCalc.Views
         {
             Application.Current.Shutdown();
         }
-         
-        
-        
+
+        private void BotaoApagar_Click(object sender, RoutedEventArgs e)
+        {
+            if (Operacao == "")
+            {
+                numero1 = (numero1 / 10);
+                VisorResultado.Text = numero1.ToString();
+            }
+            else
+            {
+                numero2 = (numero2 / 10);
+                VisorResultado.Text = numero2.ToString();
+            }
+        }
     }
 }

@@ -47,9 +47,9 @@
         <Button x:Name="Botao8" Grid.Row="4" Grid.Column="1" Click="Botao8_Click" FontWeight="Bold">8</Button>
         <Button x:Name="Botao9" Grid.Row="4" Grid.Column="2" Click="Botao9_Click" FontWeight="Bold">9</Button>
         <Button x:Name="Botao0" Grid.Row="5" Grid.Column="1" Click="Botao0_Click" FontWeight="Bold">0</Button>
-        <Button x:Name="BotaoApagar" Grid.Row="1" Grid.Column="2" Click="" FontWeight="Bold"> Apagar</Button>
+        <Button x:Name="BotaoApagar" Grid.Row="1" Grid.Column="2" Click="BotaoApagar_Click" FontWeight="Bold"> Apagar</Button>
         <Button x:Name="BotaoBUM" Grid.Row="5" Grid.Column="2" Click="BotaoBUM_Click" FontWeight="Bold" Background="#FFDDDDDD" Content="NÃO CLIQUE!" Foreground="#FFFF1313" FontSize="10"/>
-        <Button x:Name="BotaoSair" Grid.Row="5" Grid.Column="0" FontWeight="Bold" Background="#FFDDDDDD" FontSize="16" Foreground="Red">Sair</Button>
+        <Button x:Name="BotaoSair" Grid.Row="5" Grid.Column="0" FontWeight="Bold" Background="#FFDDDDDD" Foreground="Red">X</Button>
         
         <!--Operadores-->
         <Button x:Name="Somar" Grid.Row="1" Grid.Column="3" Click="Somar_Click" FontWeight="Bold">+</Button>
