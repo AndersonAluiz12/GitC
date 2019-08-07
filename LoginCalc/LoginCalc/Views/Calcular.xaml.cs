@@ -238,5 +238,10 @@ namespace LoginCalc.Views
 
         }
 
+        private void BotaoBUM_Click(object sender, RoutedEventArgs e)
+        {
+            Window1 tela = new Window1();
+            tela.Show();
+        }
     }
 }
