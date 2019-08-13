@@ -1,0 +1,42 @@
+<html>
+<head>
+    <style>
+        /* Classe especifica*/
+        .ButtomClass {
+            width: 200px;
+            height: 200px;
+        }
+
+        input {
+            width: 150px;
+            height: 35px;
+        }
+    </style>
+</head>
+<body>
+    
+        <form>
+            Nome<br><input type="text" name="UserName"><br />
+            Senha <br><input type="text" name="UserPass"><br />
+        </form>
+</body>
+</html>
+
+<script
+function Aumentar () {
+    var document1 = document.getElementById('inputLogin')
+    var document2 = document.getElementById('inputSenha')
+
+    document1.style.fontSize = (CountIncrement++) + "px";
+    document2.style.fontSize = (CountIncrement++) + "px";
+    }
+
+function Diminuir () {
+    var document1 = document.getElementById('inputLogin')
+    var document2 = document.getElementById('inputSenha')
+
+    document1.style.fontSize = (CountIncrement--) + "px";
+    document2.style.fontSize = (CountIncrement--) + "px";
+    }
+        
+</script>
