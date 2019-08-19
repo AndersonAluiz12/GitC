@@ -35,7 +35,7 @@ namespace WEBAPIRESTFULL.Models
 
         [Required]
         [StringLength(100)]
-
+        public string Email { get; set; }
 
         [JsonIgnore]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

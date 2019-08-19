@@ -1,9 +1,34 @@
 
     /* Ao carregar o documento o mesmo inicia o conteudo desde script*/
-  	jQuery(document).ready(function(){
+    jQuery(document).ready(function(){
 		/* Indica que o evento submit do form irá realizar esta ação agora*/
+		jQuery('#formusuarios').submit(function(){
+			/* Neste contesto 'this' representa o form deste ID  #myform */                
+			var dados = $(this).serialize();
+
+			 var settings = {
+			  "crossDomain": true,
+			  "url": "http://localhost:59271/Api/Generos",
+			  "method": "POST",
+			  "headers": {
+				"Content-Type": "application/x-www-form-urlencoded",
+				"Accept": "*/*"
+			  },
+			  "data": dados
+			}
+
+			$.ajax(settings).done(function (response) {
+			    GetMethod();
+			});
+			
+			return false;
+		});
 		
-		jQuery('#bntCancelar').click(function(){
+		jQuery('#bntSalvar').click(function(){
+			 Editing();
+			 
+			$('#bntSubmit').show();
+			$('#bntSalvar').hide();
 			$('#bntCancelar').hide();
 			
 			$('#Id').val("");
@@ -14,18 +39,31 @@
 			$('#Ativo select').val("true");
 		});
 		
-		GetMethod(null);
+		jQuery('#bntCancelar').click(function(){
+			$('#bntSubmit').show();
+			$('#bntSalvar').hide();
+			$('#bntCancelar').hide();
+			
+			$('#Id').val("");
+			$('#Nome').val("");
+			$('#Login').val("");
+			$('#Email').val("");
+			$('#Senha').val("");
+			$('#Ativo select').val("true");
+		});
+		
+		GetMethod();
 	});
 	
 	function GetByID(id){
-        //  $('#bntSubmit').hide();
-		//	$('#bntSalvar').show();
+        $('#bntSubmit').hide();
+		$('#bntSalvar').show();
 		$('#bntCancelar').show();
 		
         var settings = {
 			"async": true,
 			"crossDomain": true,
-			"url": "http://localhost:59271/Api/Usuarios/"+id,
+			"url": "http://localhost:59271/Api/Generos/"+id,
 			"method": "GET",
 				"headers": {
 					"Content-Type": "application/json",
@@ -35,19 +73,36 @@
 	
 			$.ajax(settings).done(function (response) {
 				$('#Id').val(response.Id);
-				$('#Nome').val(response.Nome);
-				$('#Login').val(response.Login);
-				$('#Senha').val(response.Senha);
-				$('#Email').val(response.Email);
-				$('#Ativo select').val(response.Ativo);
+				$('#Tipo').val(response.Tipo);
+				$('#Descricao').val(response.Descricao);
 			});
 		
+	}
+	
+	function Editing(){
+		var dados = $('#formusuarios').serialize();
+		var id = $('#Id').val();
+
+		 var settings = {
+		  "crossDomain": true,
+		  "url": "http://localhost:59271/Api/Generos/"+id,
+		  "method": "PUT",
+		  "headers": {
+			"Content-Type": "application/x-www-form-urlencoded",
+			"Accept": "*/*"
+		  },
+		  "data": dados
+		}
+
+		$.ajax(settings).done(function (response) {
+		    GetMethod();
+		});
 	}
 	
 	function Deleting(id){
 			 var settings = {
 			  "crossDomain": true,
-			  "url": "http://localhost:59271/Api/Usuarios/"+id,
+			  "url": "http://localhost:59271/Api/Generos/"+id,
 			  "method": "DELETE",
 			  "headers": {
 				"Content-Type": "application/x-www-form-urlencoded",
@@ -56,15 +111,15 @@
 			}
 
 			$.ajax(settings).done(function (response) {
-			    GetMethod(null);
+			    GetMethod();
 			});
 	}
     
-    function GetMethod(object){
+    function GetMethod(){
 			var settings = {
 				"async": true,
 				"crossDomain": true,
-				"url": "http://localhost:59271/Api/Usuarios",
+				"url": "http://localhost:59271/Api/Generos",
 				"method": "GET",
 				"headers": {
 					"Content-Type": "application/json",
@@ -84,21 +139,17 @@
 	   $('#tDataGrid').html(  '<tbody>'
 							+ 	'<tr>'
 							+ 		'<th>ID</th>'
-							+ 		'<th>Nome</th>'
-							+ 		'<th>Login</th>'
-							+ 		'<th>E-mail</th>'
-							+ 		'<th>Ativo</th>'
+							+ 		'<th>Tipo</th>'
+							+ 		'<th>Descricão</th>'
 							+ 		'<th>Opções</th>'
 							+ 	'</tr>'
 							+ '</tbody>');
 
 		$.each(contentValue,function(index,value) {
         var row =     '<tr>'
-						+ '<td>' + value.Id       + '</td>'
-						+ '<td>' + value.Nome    + '</td>'
-						+ '<td>' + value.Login    + '</td>'
-						+ '<td>' + value.Email    + '</td>'
-						+ '<td>' + value.Ativo    + '</td>'
+						+ '<td>' + value.Id           + '</td>'
+						+ '<td>' + value.Tipo         + '</td>'
+						+ '<td>' + value.Descricao    + '</td>'
 						+ '<td>' 
 						+ 	'<div    class=\'col-md-12\' style=\'float: right;\'>'
 						+ 		'<div    class=\'col-md-6\'>'
