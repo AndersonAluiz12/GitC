@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ProjetoTccHBSIS.Models
+namespace ProjetoTccHBSIS.Enums
 {
-    public class UserGestor
+    public enum ValidaFields
     {
-
+        ValidaPlaca,
+        ValidaEmail
     }
 }

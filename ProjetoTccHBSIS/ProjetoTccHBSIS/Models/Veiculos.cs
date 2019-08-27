@@ -9,10 +9,10 @@ namespace ProjetoTccHBSIS.Models
 {
     public class Veiculos
     {
-        [Key]
+       
         public int Id { get; set; }
         [ForeignKey("UserLocador")]
-        public UserLocador userLocador { get; set; }
+        public Colaborador userLocador { get; set; }
         public int UsuarioLocador { get; set; }
 
         [ForeignKey ("Tipo")]
