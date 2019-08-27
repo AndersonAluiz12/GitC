@@ -11,25 +11,16 @@ namespace ProjetoTccHBSIS.Models
     {
        
         public int Id { get; set; }
-        [ForeignKey("UserLocador")]
-        public Colaborador userLocador { get; set; }
-        public int UsuarioLocador { get; set; }
 
-        [ForeignKey ("Tipo")]
-        public VeiculosTipos veiculosTipos { get; set; }
-        public int Tipo { get; set; }
+        public virtual Colaborador Colaborador { get; set; }
 
-        [ForeignKey ("Marca")]
-        public VeiculosMarcas veiculosMarcas { get; set; }
-        public int Marca { get; set; }
+        public virtual TipoVeiculo VeiculosTipos  { get; set; }
 
-        [ForeignKey ("Modelo")]
-        public VeiculosModelos veiculosModelos { get; set; }
-        public int Modelo { get; set; }
+        public virtual Marcas VeiculosMarcas { get; set; }
 
-        [ForeignKey ("Cor")]
-        public VeiculosCores veiculosCores { get; set; }
-        public int Cor { get; set; }
+        public virtual Modelos VeiculosModelos { get; set; }
+
+        public virtual Cores VeiculosCores { get; set; }
 
         public string Placa { get; set; }
         

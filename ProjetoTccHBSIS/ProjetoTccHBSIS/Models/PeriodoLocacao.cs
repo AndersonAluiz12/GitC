@@ -11,11 +11,7 @@ namespace ProjetoTccHBSIS.Models
     {
         [Key]
         public int Id { get; set; }
-
-        [ForeignKey("VeiculosTipos")]
-        public VeiculosTipos veiculosTipos { get; set; }
-        public int TipoVeiculo { get; set; }
-
+        public virtual TipoVeiculo VeiculosTipos { get; set; }
         public DateTime DataInic { get; set; } = DateTime.Now;
         public DateTime DataFim { get; set; } = DateTime.Now;
     }
